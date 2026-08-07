@@ -1,0 +1,90 @@
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            "colors": {
+                "primary-fixed": "#e5e2de",
+                "inverse-on-surface": "#f4f0e9",
+                "on-tertiary-fixed-variant": "#1e477b",
+                "on-background": "#1c1c17",
+                "tertiary-container": "#f4f6ff",
+                "background": "#fdf9f2",
+                "secondary-container": "#e5e2e1",
+                "outline": "#777771",
+                "on-primary-fixed-variant": "#474744",
+                "surface-dim": "#dddad3",
+                "surface-container-low": "#f7f3ec",
+                "on-tertiary-container": "#4d72a8",
+                "outline-variant": "#c7c7bf",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#001c3b",
+                "primary-container": "#f9f6f2",
+                "error": "#ba1a1a",
+                "on-secondary-container": "#656464",
+                "inverse-primary": "#c8c6c2",
+                "surface-bright": "#fdf9f2",
+                "surface-container-highest": "#e6e2db",
+                "on-error-container": "#93000a",
+                "on-secondary": "#ffffff",
+                "on-surface-variant": "#464741",
+                "tertiary-fixed-dim": "#a7c8ff",
+                "on-error": "#ffffff",
+                "surface": "#fdf9f2",
+                "tertiary": "#395f94",
+                "on-primary-container": "#72706d",
+                "on-surface": "#1c1c17",
+                "on-primary-fixed": "#1c1c1a",
+                "secondary-fixed-dim": "#c8c6c5",
+                "primary": "#5f5e5b",
+                "secondary-fixed": "#e5e2e1",
+                "on-tertiary": "#ffffff",
+                "surface-variant": "#e6e2db",
+                "surface-tint": "#5f5e5b",
+                "inverse-surface": "#31302c",
+                "tertiary-fixed": "#d5e3ff",
+                "on-secondary-fixed": "#1c1b1b",
+                "primary-fixed-dim": "#c8c6c2",
+                "surface-container-high": "#ece8e1",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary": "#ffffff",
+                "secondary": "#5f5e5e",
+                "surface-container": "#f2ede6",
+                "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "20px",
+                "base": "8px",
+                "section-gap": "120px",
+                "element-gap": "24px",
+                "gutter": "24px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "label-sm": ["Montserrat"],
+                "body-lg": ["Montserrat"],
+                "label-bold": ["Montserrat"],
+                "body-md": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "display-lg-mobile": ["Playfair Display"],
+                "headline-md": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                "display-lg": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                "display-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }]
+            }
+        }
+    }
+}
