@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="js/tailwind-config.js"></script>
 <link rel="stylesheet" href="css/style.css">
+<!-- Script de Netlify Identity -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 
@@ -30,12 +32,12 @@
 <!-- Hero Section -->
 <header id="inicio" class="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden clip-diagonal bg-surface-variant">
 <!-- Placeholder Foto 1 -->
-<div class="absolute inset-0 w-full h-full z-0 flex items-center justify-center opacity-30 text-4xl font-bold uppercase tracking-widest">
+<div id="cms-hero-image" class="absolute inset-0 w-full h-full z-0 flex items-center justify-center opacity-30 text-4xl font-bold uppercase tracking-widest bg-cover bg-center">
     [ FOTO 1 - Hero ]
 </div>
 <div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center gap-8 mt-20">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background text-center leading-tight">Donde cada celebración cobra vida</h1>
-<p class="font-body-lg text-body-lg text-on-background max-w-2xl text-center">Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.</p>
+<h1 id="cms-hero-title" class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background text-center leading-tight">Donde cada celebración cobra vida</h1>
+<p id="cms-hero-subtitle" class="font-body-lg text-body-lg text-on-background max-w-2xl text-center">Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.</p>
 <a href="#contacto" class="mt-8 bg-on-background text-on-secondary border border-on-background px-8 py-4 font-label-bold uppercase tracking-widest hover:bg-tertiary hover:text-on-primary transition-colors duration-300">Descubrir Olimpo</a>
 </div>
 </header>
@@ -44,8 +46,8 @@
 <section id="espacio" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative -mt-32 z-20">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="flex flex-col gap-6 relative z-10">
-<h2 class="font-headline-lg text-headline-lg text-on-background">El Espacio</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.</p>
+<h2 id="cms-space-title" class="font-headline-lg text-headline-lg text-on-background">El Espacio</h2>
+<p id="cms-space-text" class="font-body-md text-body-md text-on-surface-variant">Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.</p>
 <ul class="list-disc pl-5 font-body-md text-on-surface-variant space-y-2 mt-4">
     <li>El Conjunto: Áreas verdes y terrazas al aire libre</li>
     <li>Tres Salones adaptables e interconectables</li>
@@ -55,7 +57,7 @@
 </div>
 <div class="relative h-[600px] w-full mt-8 md:mt-0">
 <!-- Placeholder Foto 2 -->
-<div class="w-full h-full bg-surface-variant shadow-2xl relative z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest">
+<div id="cms-space-image" class="w-full h-full bg-surface-variant shadow-2xl relative z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest bg-cover bg-center">
     [ FOTO 2 - El Espacio / Salones ]
 </div>
 <div class="absolute -bottom-10 -left-10 w-2/3 h-2/3 bg-tertiary-container -z-10"></div>
@@ -267,4 +269,15 @@
 </div>
 </footer>
 <script src="js/main.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body></html>

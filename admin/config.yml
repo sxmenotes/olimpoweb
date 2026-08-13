@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "img/uploads"
+
+collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "data/content.json"
+        label: "Inicio"
+        name: "home"
+        fields:
+          - {label: "Hero Título", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtítulo", name: "hero_subtitle", widget: "text"}
+          - {label: "Hero Imagen", name: "hero_image", widget: "image", required: false}
+          - {label: "El Espacio Título", name: "space_title", widget: "string"}
+          - {label: "El Espacio Texto", name: "space_text", widget: "text"}
+          - {label: "El Espacio Imagen", name: "space_image", widget: "image", required: false}

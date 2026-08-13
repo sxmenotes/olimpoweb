@@ -29,4 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Fetch CMS Content
+    fetch('data/content.json')
+        .then(response => response.json())
+        .then(data => {
+            if (data.hero_title) document.getElementById('cms-hero-title').textContent = data.hero_title;
+            if (data.hero_subtitle) document.getElementById('cms-hero-subtitle').textContent = data.hero_subtitle;
+            if (data.hero_image) {
+                document.getElementById('cms-hero-image').style.backgroundImage = `url(${data.hero_image})`;
+                document.getElementById('cms-hero-image').textContent = '';
+            }
+            
+            if (data.space_title) document.getElementById('cms-space-title').textContent = data.space_title;
+            if (data.space_text) document.getElementById('cms-space-text').textContent = data.space_text;
+            if (data.space_image) {
+                document.getElementById('cms-space-image').style.backgroundImage = `url(${data.space_image})`;
+                document.getElementById('cms-space-image').textContent = '';
+            }
+        })
+        .catch(error => console.error('Error loading CMS content:', error));
 });
