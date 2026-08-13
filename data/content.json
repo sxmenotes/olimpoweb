@@ -1,15 +1,15 @@
 {
-  "hero_title": "¡Donde cada celebración cobra vida!",
-  "hero_subtitle": "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.",
-  "hero_image": "",
-  "space_title": "El Espacio",
-  "space_text": "Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.",
   "space_image": "",
+  "space_text": "Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.",
+  "hero_title": "¡Donde cada celebración cobra vida!",
+  "hero_image": "img/uploads/whatsapp-image-2026-08-05-at-14.18.55-3-.jpeg",
   "service1_image": "",
   "service2_image": "",
   "service3_image": "",
   "gallery1_image": "",
   "gallery2_image": "",
+  "hero_subtitle": "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.",
   "gallery3_image": "",
-  "gallery4_image": ""
+  "gallery4_image": "",
+  "space_title": "El Espacio"
 }
