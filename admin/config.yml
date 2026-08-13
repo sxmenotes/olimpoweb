@@ -19,3 +19,10 @@ collections:
           - {label: "El Espacio Título", name: "space_title", widget: "string"}
           - {label: "El Espacio Texto", name: "space_text", widget: "text"}
           - {label: "El Espacio Imagen", name: "space_image", widget: "image", required: false}
+          - {label: "Servicio 1 Imagen", name: "service1_image", widget: "image", required: false}
+          - {label: "Servicio 2 Imagen", name: "service2_image", widget: "image", required: false}
+          - {label: "Servicio 3 Imagen", name: "service3_image", widget: "image", required: false}
+          - {label: "Galería Foto 1", name: "gallery1_image", widget: "image", required: false}
+          - {label: "Galería Foto 2", name: "gallery2_image", widget: "image", required: false}
+          - {label: "Galería Foto 3", name: "gallery3_image", widget: "image", required: false}
+          - {label: "Galería Foto 4", name: "gallery4_image", widget: "image", required: false}

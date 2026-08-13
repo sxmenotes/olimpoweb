@@ -46,6 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('cms-space-image').style.backgroundImage = `url(${data.space_image})`;
                 document.getElementById('cms-space-image').textContent = '';
             }
+            
+            // Servicios Images
+            if (data.service1_image) {
+                document.getElementById('cms-service1-image').style.backgroundImage = `url(${data.service1_image})`;
+                document.getElementById('cms-service1-image').textContent = '';
+            }
+            if (data.service2_image) {
+                document.getElementById('cms-service2-image').style.backgroundImage = `url(${data.service2_image})`;
+                document.getElementById('cms-service2-image').textContent = '';
+            }
+            if (data.service3_image) {
+                document.getElementById('cms-service3-image').style.backgroundImage = `url(${data.service3_image})`;
+                document.getElementById('cms-service3-image').textContent = '';
+            }
+            
+            // Gallery Images
+            if (data.gallery1_image) {
+                document.getElementById('cms-gallery1-image').style.backgroundImage = `url(${data.gallery1_image})`;
+                document.getElementById('cms-gallery1-image').textContent = '';
+            }
+            if (data.gallery2_image) {
+                document.getElementById('cms-gallery2-image').style.backgroundImage = `url(${data.gallery2_image})`;
+                document.getElementById('cms-gallery2-image').textContent = '';
+            }
+            if (data.gallery3_image) {
+                document.getElementById('cms-gallery3-image').style.backgroundImage = `url(${data.gallery3_image})`;
+                document.getElementById('cms-gallery3-image').textContent = '';
+            }
+            if (data.gallery4_image) {
+                document.getElementById('cms-gallery4-image').style.backgroundImage = `url(${data.gallery4_image})`;
+                document.getElementById('cms-gallery4-image').textContent = '';
+            }
         })
         .catch(error => console.error('Error loading CMS content:', error));
 });
