@@ -44,3 +44,18 @@ collections:
             widget: "list"
             fields:
               - {label: "Foto", name: "image", widget: "image"}
+              
+          - label: "Sección Nuestro Sello"
+            name: "sello"
+            widget: "object"
+            fields:
+              - {label: "Título Principal", name: "title", widget: "string", default: "Nuestro Sello"}
+              - {label: "Subtítulo", name: "subtitle", widget: "string", default: "Una experiencia diferente"}
+              - {label: "Párrafo 1", name: "paragraph1", widget: "text"}
+              - {label: "Párrafo 2", name: "paragraph2", widget: "text"}
+              - {label: "Párrafo 3", name: "paragraph3", widget: "text"}
+              - {label: "Párrafo 4", name: "paragraph4", widget: "text"}
+              - {label: "Título de Firma", name: "founder_title", widget: "string", default: "Olimpo Centro de Eventos"}
+              - {label: "Slogan", name: "slogan", widget: "string", default: "Tu celebración. Nuestro compromiso. Una experiencia inolvidable."}
+              - {label: "Foto Fundadora", name: "image", widget: "image"}
+              - {label: "Leyenda Foto", name: "image_caption", widget: "string", default: "Patricia Castillo, Fundadora de Centro de Eventos Olimpo"}

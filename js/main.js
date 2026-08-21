@@ -211,6 +211,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         galleryEl.textContent = '';
                     }
                 });
+            // Sello
+            if (data.sello) {
+                if (data.sello.title) document.getElementById('cms-sello-title').textContent = data.sello.title;
+                if (data.sello.subtitle) document.getElementById('cms-sello-subtitle').textContent = data.sello.subtitle;
+                if (data.sello.paragraph1) document.getElementById('cms-sello-paragraph1').textContent = data.sello.paragraph1;
+                if (data.sello.paragraph2) document.getElementById('cms-sello-paragraph2').textContent = data.sello.paragraph2;
+                if (data.sello.paragraph3) document.getElementById('cms-sello-paragraph3').textContent = data.sello.paragraph3;
+                if (data.sello.paragraph4) document.getElementById('cms-sello-paragraph4').textContent = data.sello.paragraph4;
+                if (data.sello.founder_title) document.getElementById('cms-sello-founder-title').textContent = data.sello.founder_title;
+                if (data.sello.slogan) document.getElementById('cms-sello-slogan').textContent = data.sello.slogan;
+                if (data.sello.image_caption) document.getElementById('cms-sello-image-caption').textContent = data.sello.image_caption;
+                if (data.sello.image) {
+                    const imgEl = document.getElementById('cms-sello-image');
+                    if (imgEl) imgEl.src = data.sello.image;
+                }
             }
         })
         .catch(error => console.error('Error loading CMS content:', error));

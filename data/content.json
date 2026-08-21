@@ -39,5 +39,17 @@
     {"image": "/img/gallery/gal_20.jpg"},
     {"image": "/img/gallery/gal_21.jpg"},
     {"image": "/img/gallery/gal_22.jpg"}
-  ]
+  ],
+  "sello": {
+    "title": "Nuestro Sello",
+    "subtitle": "Una experiencia diferente",
+    "paragraph1": "Nuestro estilo griego convierte a Olimpo en un lugar diferente y sofisticado. Sus espacios, áreas verdes y arquitectura crean una atmósfera elegante que permite celebrar momentos importantes en un entorno único.",
+    "paragraph2": "Porque no se trata solamente de realizar un evento, sino de crear recuerdos que permanezcan para siempre.",
+    "paragraph3": "Con más de 16 años de trayectoria, hemos construido un prestigio basado en la experiencia, la calidad, la comodidad y la confianza de nuestros clientes.",
+    "paragraph4": "Olimpo es el respaldo de una gran marca y la tranquilidad de saber que tu celebración está en manos de expertos.",
+    "founder_title": "Olimpo Centro de Eventos",
+    "slogan": "Tu celebración. Nuestro compromiso. Una experiencia inolvidable.",
+    "image": "/img/fundadora.jpg",
+    "image_caption": "Patricia Castillo, Fundadora de Centro de Eventos Olimpo"
+  }
 }
