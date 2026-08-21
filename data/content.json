@@ -2,42 +2,42 @@
   "hero": {
     "title": "¡Donde cada celebración cobra vida!",
     "subtitle": "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.",
-    "image": "img/uploads/whatsapp-image-2026-08-05-at-14.18.55-3-.jpeg"
+    "image": "/img/uploads/whatsapp-image-2026-08-05-at-14.18.55-3-.jpeg"
   },
   "space": {
     "title": "El Espacio",
     "text": "Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.",
-    "image_olimpo": "img/salon-olimpo.jpg",
-    "image_apolo": "img/salon-apolo.jpg",
+    "image_olimpo": "/img/salon-olimpo.jpg",
+    "image_apolo": "/img/salon-apolo.jpg",
     "image_dionisio": ""
   },
   "services": {
-    "image_gastronomia": "img/service-gastronomia.jpg",
-    "image_ambientacion": "img/service-ambientacion.jpg",
-    "image_wedding": "img/service-wedding.jpg"
+    "image_gastronomia": "/img/service-gastronomia.jpg",
+    "image_ambientacion": "/img/service-ambientacion.jpg",
+    "image_wedding": "/img/service-wedding.jpg"
   },
   "gallery": [
-    {"image": "img/gallery/gal_1.jpg"},
-    {"image": "img/gallery/gal_2.jpg"},
-    {"image": "img/gallery/gal_3.jpg"},
-    {"image": "img/gallery/gal_4.jpg"},
-    {"image": "img/gallery/gal_5.jpg"},
-    {"image": "img/gallery/gal_6.jpg"},
-    {"image": "img/gallery/gal_7.jpg"},
-    {"image": "img/gallery/gal_8.jpg"},
-    {"image": "img/gallery/gal_9.jpg"},
-    {"image": "img/gallery/gal_10.jpg"},
-    {"image": "img/gallery/gal_11.jpg"},
-    {"image": "img/gallery/gal_12.jpg"},
-    {"image": "img/gallery/gal_13.jpg"},
-    {"image": "img/gallery/gal_14.jpg"},
-    {"image": "img/gallery/gal_15.jpg"},
-    {"image": "img/gallery/gal_16.jpg"},
-    {"image": "img/gallery/gal_17.jpg"},
-    {"image": "img/gallery/gal_18.jpg"},
-    {"image": "img/gallery/gal_19.jpg"},
-    {"image": "img/gallery/gal_20.jpg"},
-    {"image": "img/gallery/gal_21.jpg"},
-    {"image": "img/gallery/gal_22.jpg"}
+    {"image": "/img/gallery/gal_1.jpg"},
+    {"image": "/img/gallery/gal_2.jpg"},
+    {"image": "/img/gallery/gal_3.jpg"},
+    {"image": "/img/gallery/gal_4.jpg"},
+    {"image": "/img/gallery/gal_5.jpg"},
+    {"image": "/img/gallery/gal_6.jpg"},
+    {"image": "/img/gallery/gal_7.jpg"},
+    {"image": "/img/gallery/gal_8.jpg"},
+    {"image": "/img/gallery/gal_9.jpg"},
+    {"image": "/img/gallery/gal_10.jpg"},
+    {"image": "/img/gallery/gal_11.jpg"},
+    {"image": "/img/gallery/gal_12.jpg"},
+    {"image": "/img/gallery/gal_13.jpg"},
+    {"image": "/img/gallery/gal_14.jpg"},
+    {"image": "/img/gallery/gal_15.jpg"},
+    {"image": "/img/gallery/gal_16.jpg"},
+    {"image": "/img/gallery/gal_17.jpg"},
+    {"image": "/img/gallery/gal_18.jpg"},
+    {"image": "/img/gallery/gal_19.jpg"},
+    {"image": "/img/gallery/gal_20.jpg"},
+    {"image": "/img/gallery/gal_21.jpg"},
+    {"image": "/img/gallery/gal_22.jpg"}
   ]
 }
