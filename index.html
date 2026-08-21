@@ -16,8 +16,11 @@
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 
 <!-- TopNavBar -->
-<nav class="docked full-width top-0 sticky z-50 border-b border-outline-variant bg-background dark:bg-inverse-surface dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-desktop py-base max-w-full">
-<div class="font-display-lg text-headline-md text-on-background dark:text-inverse-on-surface tracking-tighter">Olimpo</div>
+<nav class="docked full-width top-0 sticky z-50 border-b border-outline-variant bg-background dark:bg-inverse-surface dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-full">
+<div class="flex items-center relative z-10 mr-4 md:mr-12">
+    <img src="img/logo-black.png" alt="Olimpo Logo" class="h-12 w-auto object-contain transform scale-[1.5] md:scale-[2.2] origin-left dark:hidden" />
+    <img src="img/logo-white.png" alt="Olimpo Logo" class="h-12 w-auto object-contain transform scale-[1.5] md:scale-[2.2] origin-left hidden dark:block" />
+</div>
 <div class="hidden md:flex gap-element-gap">
 <a class="text-primary border-b-2 border-primary pb-1 font-label-bold uppercase tracking-widest hover:text-tertiary transition-all duration-300 scale-95" href="#inicio">Inicio</a>
 <a class="text-on-surface-variant font-label-bold uppercase tracking-widest hover:text-primary transition-colors hover:text-tertiary transition-all duration-300" href="#espacio">El Espacio</a>
@@ -26,39 +29,90 @@
 <a class="text-on-surface-variant font-label-bold uppercase tracking-widest hover:text-primary transition-colors hover:text-tertiary transition-all duration-300" href="#evento">Tu evento con nosotros</a>
 <a class="text-on-surface-variant font-label-bold uppercase tracking-widest hover:text-primary transition-colors hover:text-tertiary transition-all duration-300" href="#contacto">Contacto</a>
 </div>
-<a href="#contacto" class="bg-on-background text-on-secondary px-6 py-3 font-label-bold uppercase tracking-widest hover:bg-tertiary transition-colors duration-300 inline-block">Agendar</a>
+<div class="flex items-center gap-4">
+    <a href="#contacto" class="bg-on-background text-on-secondary px-6 py-3 font-label-bold uppercase tracking-widest hover:bg-tertiary transition-colors duration-300 hidden md:inline-block">Agendar</a>
+    <button id="mobile-menu-btn" class="md:hidden text-on-background p-2">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
 </nav>
 
-<!-- Hero Section -->
-<header id="inicio" class="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden clip-diagonal bg-surface-variant">
-<!-- Placeholder Foto 1 -->
-<div id="cms-hero-image" class="absolute inset-0 w-full h-full z-0 flex items-center justify-center opacity-30 text-4xl font-bold uppercase tracking-widest bg-cover bg-center">
-    [ FOTO 1 - Hero ]
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-background z-[60] flex flex-col pt-24 px-8 gap-8 transform translate-x-full transition-transform duration-300 md:hidden">
+    <button id="close-menu-btn" class="absolute top-6 right-6 text-on-background p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="mobile-link text-xl text-on-background font-label-bold uppercase tracking-widest" href="#inicio">Inicio</a>
+    <a class="mobile-link text-xl text-on-surface-variant font-label-bold uppercase tracking-widest" href="#espacio">El Espacio</a>
+    <a class="mobile-link text-xl text-on-surface-variant font-label-bold uppercase tracking-widest" href="#servicios">Servicios</a>
+    <a class="mobile-link text-xl text-on-surface-variant font-label-bold uppercase tracking-widest" href="#galeria">Galería</a>
+    <a class="mobile-link text-xl text-on-surface-variant font-label-bold uppercase tracking-widest" href="#evento">Tu evento con nosotros</a>
+    <a class="mobile-link text-xl text-on-surface-variant font-label-bold uppercase tracking-widest" href="#contacto">Contacto</a>
+    <a class="mobile-link mt-8 bg-on-background text-on-secondary text-center px-6 py-4 font-label-bold uppercase tracking-widest" href="#contacto">Agendar</a>
 </div>
-<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center gap-8 mt-20">
+
+
+<!-- Hero Section -->
+<header id="inicio" class="relative w-full h-screen min-h-[100dvh] md:min-h-[800px] flex items-center justify-center overflow-hidden clip-diagonal bg-surface-variant">
+<!-- Imagen Hero -->
+<div id="cms-hero-image" class="absolute inset-0 w-full h-full z-0 opacity-30 bg-cover bg-center" style="background-image: url('img/hero-olimpo.jpg');">
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center gap-8 mt-10 md:mt-20">
 <h1 id="cms-hero-title" class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background text-center leading-tight">Donde cada celebración cobra vida</h1>
 <p id="cms-hero-subtitle" class="font-body-lg text-body-lg text-on-background max-w-2xl text-center">Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.</p>
-<a href="#contacto" class="mt-8 bg-on-background text-on-secondary border border-on-background px-8 py-4 font-label-bold uppercase tracking-widest hover:bg-tertiary hover:text-on-primary transition-colors duration-300">Descubrir Olimpo</a>
+<a href="#contacto" class="mt-4 md:mt-8 bg-on-background text-on-secondary border border-on-background px-8 py-4 font-label-bold uppercase tracking-widest hover:bg-tertiary hover:text-on-primary transition-colors duration-300">Descubrir Olimpo</a>
 </div>
 </header>
 
 <!-- El Espacio Section -->
-<section id="espacio" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative -mt-32 z-20">
+<section id="espacio" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative -mt-16 md:-mt-32 z-20">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="flex flex-col gap-6 relative z-10">
-<h2 id="cms-space-title" class="font-headline-lg text-headline-lg text-on-background">El Espacio</h2>
-<p id="cms-space-text" class="font-body-md text-body-md text-on-surface-variant">Descubra nuestro complejo integral diseñado para superar sus expectativas. Un centro de eventos inigualable compuesto por tres salones versátiles adaptables a cualquier capacidad y estilo, amplias áreas verdes, y nuestro exclusivo Apart Hotel para brindar comodidad total a usted y sus invitados.</p>
-<ul class="list-disc pl-5 font-body-md text-on-surface-variant space-y-2 mt-4">
-    <li>El Conjunto: Áreas verdes y terrazas al aire libre</li>
-    <li>Tres Salones adaptables e interconectables</li>
-    <li>Apart Hotel de primer nivel para alojamiento</li>
-</ul>
-<a class="font-label-bold text-label-bold text-on-background border-b border-on-background inline-block w-max pb-1 hover:text-tertiary hover:border-tertiary transition-colors mt-4" href="#">Ver Planos Completos</a>
+<h2 id="cms-space-title" class="text-4xl md:text-5xl font-display-lg text-on-background mb-2">El Espacio</h2>
+<p id="cms-space-text" class="text-lg md:text-xl font-body-lg text-on-surface-variant mb-8 leading-relaxed">Sumérjase en nuestra inconfundible arquitectura de estilo griego, diseñada para crear un ambiente elegante, diferente y de altísimo nivel. Nuestro complejo cuenta con hermosas y amplias áreas verdes, piscina y un exclusivo Apart Hotel pensado para el descanso y la máxima comodidad de sus invitados.</p>
+
+<!-- TABS -->
+<div class="flex flex-row gap-1 md:gap-2 mb-8 bg-surface-container p-1 md:p-1.5 rounded-full w-full md:w-max border border-outline-variant shadow-sm relative z-20">
+  <button class="space-tab-btn active flex-1 md:flex-none bg-primary text-on-primary rounded-full px-1 md:px-6 py-2 md:py-2.5 text-[10px] md:text-base font-label-bold uppercase tracking-widest transition-all duration-300 transform md:hover:scale-105" data-target="espacio-1">
+    <span class="md:hidden">Olimpo</span><span class="hidden md:inline">Salón Olimpo</span>
+  </button>
+  <button class="space-tab-btn flex-1 md:flex-none bg-transparent text-on-surface-variant hover:bg-surface-variant hover:text-on-background rounded-full px-1 md:px-6 py-2 md:py-2.5 text-[10px] md:text-base font-label-bold uppercase tracking-widest transition-all duration-300 transform md:hover:scale-105" data-target="espacio-2">
+    <span class="md:hidden">Apolo</span><span class="hidden md:inline">Salón Apolo</span>
+  </button>
+  <button class="space-tab-btn flex-1 md:flex-none bg-transparent text-on-surface-variant hover:bg-surface-variant hover:text-on-background rounded-full px-1 md:px-6 py-2 md:py-2.5 text-[10px] md:text-base font-label-bold uppercase tracking-widest transition-all duration-300 transform md:hover:scale-105" data-target="espacio-3">
+    <span class="md:hidden">Dionisio</span><span class="hidden md:inline">Salón Dionisio</span>
+  </button>
 </div>
-<div class="relative h-[600px] w-full mt-8 md:mt-0">
-<!-- Placeholder Foto 2 -->
-<div id="cms-space-image" class="w-full h-full bg-surface-variant shadow-2xl relative z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest bg-cover bg-center">
-    [ FOTO 2 - El Espacio / Salones ]
+
+<!-- TAB CONTENTS -->
+<div class="grid relative min-h-[160px]">
+  <div id="espacio-1" class="space-content active col-start-1 row-start-1 flex flex-col gap-4 transition-all duration-700 opacity-100 translate-x-0 z-10">
+    <h3 class="text-2xl md:text-3xl font-display-sm text-on-background leading-tight">Salón Olimpo</h3>
+    <p class="text-base md:text-lg font-body-lg text-on-surface-variant leading-relaxed">Nuestro salón principal y el más majestuoso del complejo. Con una capacidad para albergar hasta <strong>500 personas</strong>, el Salón Olimpo está diseñado para eventos de gran magnitud. Cuenta con una decoración propia de primer nivel y un sistema de iluminación de vanguardia, incluyendo tecnología robotizada y láser para hacer brillar su celebración.</p>
+  </div>
+
+  <div id="espacio-2" class="space-content col-start-1 row-start-1 flex flex-col gap-4 transition-all duration-700 opacity-0 translate-x-8 z-0 pointer-events-none">
+    <h3 class="text-2xl md:text-3xl font-display-sm text-on-background leading-tight">Salón Apolo</h3>
+    <p class="text-base md:text-lg font-body-lg text-on-surface-variant leading-relaxed">El equilibrio perfecto entre amplitud y calidez. El Salón Apolo recibe cómodamente hasta <strong>300 personas</strong>, ofreciendo un ambiente sofisticado con identidad propia. Al igual que nuestro salón principal, está totalmente equipado con iluminación láser y robotizada, garantizando un espectáculo visual inigualable.</p>
+  </div>
+
+  <div id="espacio-3" class="space-content col-start-1 row-start-1 flex flex-col gap-4 transition-all duration-700 opacity-0 translate-x-8 z-0 pointer-events-none">
+    <h3 class="text-2xl md:text-3xl font-display-sm text-on-background leading-tight">Salón Dionisio</h3>
+    <p class="text-base md:text-lg font-body-lg text-on-surface-variant leading-relaxed">Íntimo, acogedor y lleno de encanto. El Salón Dionisio es el espacio ideal para celebraciones más exclusivas y boutique, con capacidad para hasta <strong>70 personas</strong>. Mantiene la elegancia característica del complejo, con una decoración cuidada al detalle y tecnología de iluminación profesional para crear la atmósfera perfecta.</p>
+  </div>
+</div>
+
+</div>
+<div class="relative h-[400px] md:h-[600px] w-full mt-8 md:mt-0 overflow-hidden rounded-lg">
+<!-- Imagen Espacio 1 -->
+<div id="img-espacio-1" class="space-img absolute inset-0 opacity-100 transition-opacity duration-1000 w-full h-full bg-surface-variant shadow-2xl z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest bg-cover bg-center border border-outline-variant scale-100" style="background-image: url('img/salon-olimpo.jpg');">
+</div>
+<!-- Imagen Espacio 2 -->
+<div id="img-espacio-2" class="space-img absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-1000 w-full h-full bg-surface-variant shadow-2xl z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest bg-cover bg-center border border-outline-variant" style="background-image: url('img/salon-apolo.jpg');">
+</div>
+<!-- Imagen Espacio 3 -->
+<div id="img-espacio-3" class="space-img absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-1000 w-full h-full bg-surface-variant shadow-2xl z-0 flex items-center justify-center text-xl font-bold uppercase tracking-widest bg-cover bg-center border border-outline-variant">
+    [ FOTO - SALÓN DIONISIO ]
 </div>
 <div class="absolute -bottom-10 -left-10 w-2/3 h-2/3 bg-tertiary-container -z-10"></div>
 </div>
@@ -66,53 +120,51 @@
 </section>
 
 <!-- Servicios Section -->
-<section id="servicios" class="py-section-gap bg-on-background text-on-primary clip-diagonal-reverse relative z-10 pb-40">
+<section id="servicios" class="py-section-gap bg-on-background text-on-primary md:[clip-path:polygon(0_15%,100%_0,100%_100%,0_100%)] relative z-10 pb-20 md:pb-40">
 <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
-<div class="text-center mb-20">
-<h2 class="font-headline-lg text-headline-lg text-on-primary mb-4">Nuestros Servicios</h2>
-<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto">Ofrecemos diferentes planes integrales y servicios adicionales para que su evento sea exactamente como lo soñó.</p>
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-headline-lg text-on-primary mb-6">Nuestros Servicios</h2>
+<p class="text-base md:text-lg text-surface-variant max-w-3xl mx-auto leading-relaxed">Descubra todo lo que Centro de Eventos Olimpo tiene para ofrecer. Nos encargamos de cada detalle para que su celebración sea una experiencia inolvidable, brindando un servicio integral de la más alta calidad y exclusividad.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap">
 <!-- Service 1 -->
-<div class="group relative overflow-hidden h-[450px] bg-surface-variant flex items-center justify-center">
-<!-- Placeholder Foto 3 -->
-<div id="cms-service1-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-center">
-    [ FOTO 3 - Planes ]
+<div class="group relative overflow-hidden h-[450px] bg-transparent isolate flex items-center justify-center rounded-xl shadow-lg cursor-default">
+<!-- Imagen Gastronomía -->
+<div id="cms-service1-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-center transition-transform duration-700 scale-[1.02] group-hover:scale-110" style="background-image: url('img/service-gastronomia.jpg');">
 </div>
-<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/70 to-transparent z-10"></div>
-<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-4 z-20">
-<span class="material-symbols-outlined text-4xl text-on-primary" style="font-variation-settings: 'FILL' 1;">star</span>
-<h3 class="font-headline-md text-headline-md text-on-primary">Planes Integrales</h3>
-<p class="font-body-md text-body-md text-surface-container opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Soluciones completas que incluyen banquetería, decoración y personal según el nivel de su evento.</p>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/80 to-transparent z-10 transition-opacity duration-700 group-hover:opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3 z-20 w-full">
+<span class="material-symbols-outlined text-4xl text-white" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<h3 class="text-2xl md:text-3xl font-display-sm text-on-primary">Gastronomía</h3>
+<p class="text-base text-surface-container opacity-90 leading-relaxed">Una de las mejores propuestas de la región. Contamos con 5 estrellas en las plataformas más exigentes de opiniones de Matrimonios.</p>
 </div>
 </div>
 <!-- Service 2 -->
-<div class="group relative overflow-hidden h-[450px] md:-mt-12 bg-surface-variant flex items-center justify-center">
-<!-- Placeholder Foto 4 -->
-<div id="cms-service2-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-center">
-    [ FOTO 4 - Adicionales ]
+<div class="group relative overflow-hidden h-[450px] md:-mt-8 bg-transparent isolate flex items-center justify-center rounded-xl shadow-lg cursor-default">
+<!-- Imagen Ambientación -->
+<div id="cms-service2-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-center transition-transform duration-700 scale-[1.02] group-hover:scale-110" style="background-image: url('img/service-ambientacion.jpg');">
 </div>
-<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/70 to-transparent z-10"></div>
-<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-4 z-20">
-<span class="material-symbols-outlined text-4xl text-on-primary" style="font-variation-settings: 'FILL' 1;">add_circle</span>
-<h3 class="font-headline-md text-headline-md text-on-primary">Servicios Adicionales</h3>
-<p class="font-body-md text-body-md text-surface-container opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Personalización con costo agregado: shows en vivo, barras premium, iluminación técnica y más.</p>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/80 to-transparent z-10 transition-opacity duration-700 group-hover:opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3 z-20 w-full">
+<span class="material-symbols-outlined text-4xl text-white" style="font-variation-settings: 'FILL' 1;">park</span>
+<h3 class="text-2xl md:text-3xl font-display-sm text-on-primary">Ambientación</h3>
+<p class="text-base text-surface-container opacity-90 leading-relaxed">Inconfundible estilo griego con áreas verdes, piscina y apart hotel. Salones con decoración propia e iluminación robotizada y láser de gran nivel.</p>
 </div>
 </div>
 <!-- Service 3 -->
-<div class="group relative overflow-hidden h-[450px] bg-surface-variant flex items-center justify-center">
-<!-- Placeholder Foto 5 -->
-<div id="cms-service3-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-center">
-    [ FOTO 5 - Asesoría ]
+<div class="group relative overflow-hidden h-[450px] bg-transparent isolate flex items-center justify-center rounded-xl shadow-lg cursor-default">
+<!-- Imagen Wedding Planner -->
+<div id="cms-service3-image" class="absolute inset-0 flex items-center justify-center text-on-surface-variant font-bold uppercase tracking-widest z-0 bg-cover bg-[35%_center] transition-transform duration-700 scale-[1.02] group-hover:scale-110" style="background-image: url('img/service-wedding.jpg');">
 </div>
-<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/70 to-transparent z-10"></div>
-<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-4 z-20">
-<span class="material-symbols-outlined text-4xl text-on-primary" style="font-variation-settings: 'FILL' 1;">event</span>
-<h3 class="font-headline-md text-headline-md text-on-primary">Wedding & Event Planning</h3>
-<p class="font-body-md text-body-md text-surface-container opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Asesoría experta durante todo el proceso para diseñar cada detalle y coordinar a los proveedores.</p>
-</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/80 to-transparent z-10 transition-opacity duration-700 group-hover:opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3 z-20 w-full">
+<span class="material-symbols-outlined text-4xl text-white" style="font-variation-settings: 'FILL' 1;">event</span>
+<h3 class="text-2xl md:text-3xl font-display-sm text-on-primary">Wedding Planner</h3>
+<p class="text-base text-surface-container opacity-90 leading-relaxed">Brindamos un servicio completo y personalizado, guiado por nuestras jefas de protocolo y wedding planners exclusivas de Olimpo.</p>
 </div>
 </div>
+</div>
+
 </div>
 </section>
 
@@ -122,23 +174,124 @@
 <h2 class="font-headline-lg text-headline-lg text-on-background">Galería</h2>
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-tertiary transition-colors uppercase tracking-widest hidden md:block" href="#">Ver Galería Completa</a>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
-<!-- Foto 6 -->
-<div id="cms-gallery1-image" class="col-span-2 row-span-2 relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center">
-    <div class="text-on-surface-variant font-bold uppercase tracking-widest">[ FOTO 6 - Galería ]</div>
+<!-- Slider Container -->
+<div id="gallery-slider" class="flex gap-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] h-[350px] md:h-[500px]">
+  
+  <!-- Col 1: Big Square -->
+  <div id="cms-gallery1-image" class="snap-start shrink-0 w-[85vw] md:w-[600px] h-full relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_1.jpg'); background-position: 49% 32%;">
+      
+  </div>
+  
+  <!-- Col 2: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery2-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_2.jpg'); background-position: 47% 29%;">
+          
+      </div>
+      <div id="cms-gallery3-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_3.jpg'); background-position: 49% 33%;">
+          
+      </div>
+  </div>
+  
+  <!-- Col 3: Tall Rectangle -->
+  <div id="cms-gallery4-image" class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_4.jpg'); background-position: 52% 38%;">
+      
+  </div>
+  
+  <!-- Col 4: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery5-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_5.jpg'); background-position: 52% 33%;">
+          
+      </div>
+      <div id="cms-gallery6-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_6.jpg'); background-position: 52% 33%;">
+          
+      </div>
+  </div>
+
+  <!-- Col 5: Big Square -->
+  <div id="cms-gallery7-image" class="snap-start shrink-0 w-[85vw] md:w-[600px] h-full relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_7.jpg'); background-position: 55% 28%;">
+      
+  </div>
+
+  <!-- Col 6: Tall Rectangle -->
+  <div id="cms-gallery8-image" class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_8.jpg'); background-position: 50% 33%;">
+      
+  </div>
+
+  <!-- Col 7: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery9-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_9.jpg'); background-position: 50% 34%;">
+          
+      </div>
+      <div id="cms-gallery10-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_10.jpg'); background-position: 49% 21%;">
+          
+      </div>
+  </div>
+
+  <!-- Col 8: Big Square -->
+  <div id="cms-gallery11-image" class="snap-start shrink-0 w-[85vw] md:w-[600px] h-full relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_11.jpg'); background-position: 49% 29%;">
+      
+  </div>
+
+  <!-- Col 9: Tall Rectangle -->
+  <div id="cms-gallery12-image" class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_12.jpg'); background-position: 39% 37%;">
+      
+  </div>
+
+  <!-- Col 10: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery13-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_13.jpg'); background-position: 50% 29%;">
+          
+      </div>
+      <div id="cms-gallery14-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_14.jpg'); background-position: 47% 40%;">
+          
+      </div>
+  </div>
+
+  <!-- Col 11: Big Square -->
+  <div id="cms-gallery15-image" class="snap-start shrink-0 w-[85vw] md:w-[600px] h-full relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_15.jpg'); background-position: 46% 35%;">
+      
+  </div>
+
+  <!-- Col 12: Tall Rectangle -->
+  <div id="cms-gallery16-image" class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_16.jpg'); background-position: 51% 32%;">
+      
+  </div>
+
+  <!-- Col 13: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery17-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_17.jpg'); background-position: 53% 34%;">
+          
+      </div>
+      <div id="cms-gallery18-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_18.jpg'); background-position: 48% 34%;">
+          
+      </div>
+  </div>
+
+  <!-- Col 14: Big Square -->
+  <div id="cms-gallery19-image" class="snap-start shrink-0 w-[85vw] md:w-[600px] h-full relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_19.jpg'); background-position: 49% 35%;">
+      
+  </div>
+
+  <!-- Col 15: Two Smalls -->
+  <div class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full flex flex-col gap-4">
+      <div id="cms-gallery20-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_20.jpg'); background-position: 49% 31%;">
+          
+      </div>
+      <div id="cms-gallery21-image" class="flex-1 rounded-lg overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/gallery/gal_21.jpg'); background-position: 48% 27%;">
+          
+      </div>
+  </div>
+
+  <!-- Col 16: Tall Rectangle -->
+  <div id="cms-gallery22-image" class="snap-start shrink-0 w-[70vw] md:w-[350px] h-full relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center rounded-lg" style="background-image: url('img/gallery/gal_22.jpg'); background-position: 48% 33%;">
+      
+  </div>
+
 </div>
-<!-- Foto 7 -->
-<div id="cms-gallery2-image" class="col-span-1 row-span-1 relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center">
-    <div class="text-on-surface-variant font-bold uppercase tracking-widest">[ FOTO 7 ]</div>
-</div>
-<!-- Foto 8 -->
-<div id="cms-gallery3-image" class="col-span-1 row-span-2 relative overflow-hidden group bg-surface-variant flex items-center justify-center bg-cover bg-center">
-    <div class="text-on-surface-variant font-bold uppercase tracking-widest">[ FOTO 8 ]</div>
-</div>
-<!-- Foto 9 -->
-<div id="cms-gallery4-image" class="col-span-1 row-span-1 relative overflow-hidden group bg-surface-container flex items-center justify-center bg-cover bg-center">
-    <div class="text-on-surface-variant font-bold uppercase tracking-widest">[ FOTO 9 ]</div>
-</div>
+
+<!-- Slider Controls -->
+<div class="flex justify-center mt-12 w-full px-4 md:px-0 relative z-20">
+  <input type="range" id="gal-scrollbar" min="0" max="100" value="0" class="w-full max-w-2xl h-3 bg-surface-variant rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:h-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_15px_rgba(0,0,0,0.5)] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-outline-variant [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:h-8 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:shadow-[0_0_15px_rgba(0,0,0,0.5)] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-outline-variant outline-none focus:ring-2 focus:ring-tertiary transition-shadow">
 </div>
 </section>
 
@@ -177,7 +330,7 @@
 </div>
 
 <!-- Formulario de Contacto -->
-<div id="contacto" class="bg-background p-10 md:p-14 shadow-2xl relative">
+<div id="contacto" class="bg-background p-6 md:p-14 shadow-2xl relative">
 <div class="absolute -top-4 -right-4 w-24 h-24 bg-tertiary -z-10"></div>
 <h3 class="font-headline-md text-headline-md text-on-background mb-8">Cotiza tu evento</h3>
 <form class="flex flex-col gap-6">
@@ -231,16 +384,18 @@
 <label class="sr-only" for="details">Detalles</label>
 <textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-4 font-body-md text-body-md text-on-background focus:ring-0 focus:border-tertiary transition-colors rounded-none px-0 resize-none" id="details" placeholder="Cuéntenos sobre el tipo de evento y cantidad de invitados..." rows="3"></textarea>
 </div>
-<button class="mt-4 bg-on-background text-on-secondary w-full py-4 font-label-bold uppercase tracking-widest hover:bg-tertiary transition-colors duration-300" type="button">Enviar cotización al Whatsapp</button>
+<button id="whatsapp-btn" class="mt-4 bg-on-background text-on-secondary w-full py-4 font-label-bold uppercase tracking-widest hover:bg-tertiary transition-colors duration-300" type="button">Enviar cotización al Whatsapp</button>
 </form>
 </div>
 </div>
 </section>
 
 <!-- Información de Contacto / Footer -->
-<footer class="bg-inverse-surface dark:bg-surface-container-highest text-inverse-on-surface dark:text-on-surface full-width bottom-0 flat no shadows bg-inverse-surface dark:bg-surface-container-highest grid grid-cols-1 md:grid-cols-4 gap-element-gap px-margin-desktop py-section-gap w-full Transition-opacity duration-200">
+<footer class="bg-inverse-surface dark:bg-surface-container-highest text-inverse-on-surface dark:text-on-surface full-width bottom-0 flat no shadows bg-inverse-surface dark:bg-surface-container-highest grid grid-cols-1 md:grid-cols-4 gap-element-gap px-margin-mobile md:px-margin-desktop py-section-gap w-full Transition-opacity duration-200">
 <div class="flex flex-col items-start gap-4 col-span-1 md:col-span-2">
-<span class="font-display-lg text-headline-md text-primary-fixed">Olimpo</span>
+<div class="relative w-full h-8 mb-2">
+    <img src="img/logo-white.png" alt="Olimpo Logo" class="h-10 w-auto object-contain transform scale-[2] md:scale-[3] origin-left absolute top-1/2 left-0 -translate-y-1/2" />
+</div>
 <p class="font-body-md text-body-md text-surface-variant max-w-sm">Centro de Eventos integral en el corazón del Maule. El lugar perfecto para matrimonios, galas y eventos corporativos.</p>
 </div>
 

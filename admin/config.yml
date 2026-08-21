@@ -13,16 +13,34 @@ collections:
         label: "Inicio"
         name: "home"
         fields:
-          - {label: "Hero Título", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtítulo", name: "hero_subtitle", widget: "text"}
-          - {label: "Hero Imagen", name: "hero_image", widget: "image", required: false}
-          - {label: "El Espacio Título", name: "space_title", widget: "string"}
-          - {label: "El Espacio Texto", name: "space_text", widget: "text"}
-          - {label: "El Espacio Imagen", name: "space_image", widget: "image", required: false}
-          - {label: "Servicio 1 Imagen", name: "service1_image", widget: "image", required: false}
-          - {label: "Servicio 2 Imagen", name: "service2_image", widget: "image", required: false}
-          - {label: "Servicio 3 Imagen", name: "service3_image", widget: "image", required: false}
-          - {label: "Galería Foto 1", name: "gallery1_image", widget: "image", required: false}
-          - {label: "Galería Foto 2", name: "gallery2_image", widget: "image", required: false}
-          - {label: "Galería Foto 3", name: "gallery3_image", widget: "image", required: false}
-          - {label: "Galería Foto 4", name: "gallery4_image", widget: "image", required: false}
+          - label: "Sección Inicio (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Título Principal", name: "title", widget: "string", default: "Donde cada celebración cobra vida"}
+              - {label: "Subtítulo", name: "subtitle", widget: "text", default: "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó."}
+              - {label: "Imagen de Fondo", name: "image", widget: "image", required: false}
+
+          - label: "Sección El Espacio"
+            name: "space"
+            widget: "object"
+            fields:
+              - {label: "Título Principal", name: "title", widget: "string", default: "El Espacio"}
+              - {label: "Texto Principal", name: "text", widget: "text", default: "Sumérjase en nuestra inconfundible arquitectura de estilo griego, diseñada para crear un ambiente elegante, diferente y de altísimo nivel. Nuestro complejo cuenta con hermosas y amplias áreas verdes, piscina y un exclusivo Apart Hotel pensado para el descanso y la máxima comodidad de sus invitados."}
+              - {label: "Imagen Salón Olimpo", name: "image_olimpo", widget: "image", required: false}
+              - {label: "Imagen Salón Apolo", name: "image_apolo", widget: "image", required: false}
+              - {label: "Imagen Salón Dionisio", name: "image_dionisio", widget: "image", required: false}
+
+          - label: "Sección Servicios"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Foto Gastronomía", name: "image_gastronomia", widget: "image", required: false}
+              - {label: "Foto Ambientación", name: "image_ambientacion", widget: "image", required: false}
+              - {label: "Foto Wedding Planner", name: "image_wedding", widget: "image", required: false}
+
+          - label: "Sección Galería"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - {label: "Foto", name: "image", widget: "image"}

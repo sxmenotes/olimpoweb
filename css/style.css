@@ -65,3 +65,7 @@
 .clip-diagonal-reverse {
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }
+
+html {
+    scroll-behavior: smooth;
+}
