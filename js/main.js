@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     c.classList.add('opacity-0', 'translate-x-8', 'z-0', 'pointer-events-none');
                 });
                 const targetContent = document.getElementById(target);
-                targetContent.classList.remove('opacity-0', 'translate-x-8', 'pointer-events-none');
+                targetContent.classList.remove('opacity-0', 'translate-x-8', 'pointer-events-none', 'z-0');
                 targetContent.classList.add('opacity-100', 'translate-x-0', 'z-10');
                 
                 // Update images (slower cross-fade)
@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         galleryEl.textContent = '';
                     }
                 });
+            }
             // Sello
             if (data.sello) {
                 if (data.sello.title) document.getElementById('cms-sello-title').textContent = data.sello.title;
