@@ -2,7 +2,7 @@
   "hero": {
     "title": "¡Donde cada celebración cobra vida!",
     "subtitle": "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó.",
-    "image": "/img/uploads/whatsapp-image-2026-08-05-at-14.18.55-3-.jpeg"
+    "image": "/img/hero-olimpo.jpg"
   },
   "space": {
     "title": "El Espacio",
@@ -17,39 +17,83 @@
     "image_wedding": "/img/service-wedding.jpg"
   },
   "gallery": [
-    {"image": "/img/gallery/gal_1.jpg"},
-    {"image": "/img/gallery/gal_2.jpg"},
-    {"image": "/img/gallery/gal_3.jpg"},
-    {"image": "/img/gallery/gal_4.jpg"},
-    {"image": "/img/gallery/gal_5.jpg"},
-    {"image": "/img/gallery/gal_6.jpg"},
-    {"image": "/img/gallery/gal_7.jpg"},
-    {"image": "/img/gallery/gal_8.jpg"},
-    {"image": "/img/gallery/gal_9.jpg"},
-    {"image": "/img/gallery/gal_10.jpg"},
-    {"image": "/img/gallery/gal_11.jpg"},
-    {"image": "/img/gallery/gal_12.jpg"},
-    {"image": "/img/gallery/gal_13.jpg"},
-    {"image": "/img/gallery/gal_14.jpg"},
-    {"image": "/img/gallery/gal_15.jpg"},
-    {"image": "/img/gallery/gal_16.jpg"},
-    {"image": "/img/gallery/gal_17.jpg"},
-    {"image": "/img/gallery/gal_18.jpg"},
-    {"image": "/img/gallery/gal_19.jpg"},
-    {"image": "/img/gallery/gal_20.jpg"},
-    {"image": "/img/gallery/gal_21.jpg"},
-    {"image": "/img/gallery/gal_22.jpg"}
+    {
+      "image": "/img/gallery/gal_1.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_2.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_3.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_4.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_5.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_6.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_7.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_8.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_9.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_10.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_11.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_12.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_13.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_14.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_15.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_16.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_17.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_18.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_19.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_20.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_21.jpg"
+    },
+    {
+      "image": "/img/gallery/gal_22.jpg"
+    }
   ],
   "sello": {
-    "title": "Nuestro Sello",
-    "subtitle": "Una experiencia diferente",
+    "image_caption": "Patricia Castillo, Fundadora de Centro de Eventos Olimpo",
     "paragraph1": "Nuestro estilo griego convierte a Olimpo en un lugar diferente y sofisticado. Sus espacios, áreas verdes y arquitectura crean una atmósfera elegante que permite celebrar momentos importantes en un entorno único.",
     "paragraph2": "Porque no se trata solamente de realizar un evento, sino de crear recuerdos que permanezcan para siempre.",
     "paragraph3": "Con más de 16 años de trayectoria, hemos construido un prestigio basado en la experiencia, la calidad, la comodidad y la confianza de nuestros clientes.",
     "paragraph4": "Olimpo es el respaldo de una gran marca y la tranquilidad de saber que tu celebración está en manos de expertos.",
     "founder_title": "Olimpo Centro de Eventos",
-    "slogan": "Tu celebración. Nuestro compromiso. Una experiencia inolvidable.",
+    "subtitle": "Una experiencia diferente",
+    "title": "Nuestro Sello",
     "image": "/img/fundadora.jpg",
-    "image_caption": "Patricia Castillo, Fundadora de Centro de Eventos Olimpo"
+    "slogan": "Tu celebración. Nuestro compromiso. Una experiencia inolvidable."
   }
 }
