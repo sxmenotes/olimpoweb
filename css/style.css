@@ -1,52 +1,52 @@
 :root {
     /* Colors */
-    --color-primary-fixed: #e5e2de;
-    --color-inverse-on-surface: #f4f0e9;
-    --color-on-tertiary-fixed-variant: #1e477b;
-    --color-on-background: #1c1c17;
-    --color-tertiary-container: #f4f6ff;
-    --color-background: #fdf9f2;
-    --color-secondary-container: #e5e2e1;
-    --color-outline: #777771;
-    --color-on-primary-fixed-variant: #474744;
-    --color-surface-dim: #dddad3;
-    --color-surface-container-low: #f7f3ec;
-    --color-on-tertiary-container: #4d72a8;
-    --color-outline-variant: #c7c7bf;
-    --color-surface-container-lowest: #ffffff;
-    --color-on-tertiary-fixed: #001c3b;
-    --color-primary-container: #f9f6f2;
-    --color-error: #ba1a1a;
-    --color-on-secondary-container: #656464;
-    --color-inverse-primary: #c8c6c2;
-    --color-surface-bright: #fdf9f2;
-    --color-surface-container-highest: #e6e2db;
-    --color-on-error-container: #93000a;
-    --color-on-secondary: #ffffff;
-    --color-on-surface-variant: #464741;
-    --color-tertiary-fixed-dim: #a7c8ff;
-    --color-on-error: #ffffff;
-    --color-surface: #fdf9f2;
-    --color-tertiary: #395f94;
-    --color-on-primary-container: #72706d;
-    --color-on-surface: #1c1c17;
-    --color-on-primary-fixed: #1c1c1a;
-    --color-secondary-fixed-dim: #c8c6c5;
-    --color-primary: #5f5e5b;
-    --color-secondary-fixed: #e5e2e1;
-    --color-on-tertiary: #ffffff;
-    --color-surface-variant: #e6e2db;
-    --color-surface-tint: #5f5e5b;
-    --color-inverse-surface: #31302c;
-    --color-tertiary-fixed: #d5e3ff;
-    --color-on-secondary-fixed: #1c1b1b;
-    --color-primary-fixed-dim: #c8c6c2;
-    --color-surface-container-high: #ece8e1;
-    --color-on-secondary-fixed-variant: #474646;
+    --color-primary: #4a5022;
     --color-on-primary: #ffffff;
-    --color-secondary: #5f5e5e;
-    --color-surface-container: #f2ede6;
+    --color-primary-container: #d6dea5;
+    --color-on-primary-container: #1a1e00;
+    --color-secondary: #60624a;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #e6e7c8;
+    --color-on-secondary-container: #1d1e0b;
+    --color-tertiary: #3c665e;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #beece2;
+    --color-on-tertiary-container: #00201a;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
     --color-error-container: #ffdad6;
+    --color-on-error-container: #410002;
+    --color-background: #f8f7f2;
+    --color-on-background: #2a2d13;
+    --color-surface: #f8f7f2;
+    --color-on-surface: #2a2d13;
+    --color-surface-variant: #edebe0;
+    --color-on-surface-variant: #4d5138;
+    --color-outline: #7e8266;
+    --color-outline-variant: #c6c8b6;
+    --color-surface-dim: #dbd8c9;
+    --color-surface-bright: #fbf9f4;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f5f3e7;
+    --color-surface-container: #efede1;
+    --color-surface-container-high: #e9e7db;
+    --color-surface-container-highest: #e4e2d5;
+    --color-inverse-surface: #2f311c;
+    --color-inverse-on-surface: #f5f3e7;
+    --color-inverse-primary: #bbc38b;
+    --color-primary-fixed: #d6dea5;
+    --color-on-primary-fixed: #101400;
+    --color-primary-fixed-dim: #bbc38b;
+    --color-on-primary-fixed-variant: #33390c;
+    --color-secondary-fixed: #e6e7c8;
+    --color-on-secondary-fixed: #1d1e0b;
+    --color-secondary-fixed-dim: #c9caad;
+    --color-on-secondary-fixed-variant: #484a34;
+    --color-tertiary-fixed: #beece2;
+    --color-on-tertiary-fixed: #00201a;
+    --color-tertiary-fixed-dim: #a3d0c6;
+    --color-on-tertiary-fixed-variant: #234d45;
+    --color-surface-tint: #4a5022;
 
     /* Typography */
     --font-primary: 'Montserrat', sans-serif;
@@ -69,3 +69,46 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Animaciones de Entrada (Scroll) */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); /* Suave ease-out */
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-up {
+    transform: translateY(50px);
+}
+
+.fade-in {
+    transform: translateY(0);
+    transition-duration: 1.2s;
+}
+
+/* Patrón de líneas geométricas para fondo oscuro */
+.geo-lines {
+    background-image: 
+        linear-gradient(rgba(214, 222, 165, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214, 222, 165, 0.04) 1px, transparent 1px);
+    background-size: 120px 120px;
+    background-position: center center;
+}
+
+/* Decoraciones y SVG Parallax */
+.olympus-column {
+    position: absolute;
+    top: -5%;
+    bottom: -5%;
+    width: 250px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.1s linear;
+}
+.column-left { left: -50px; }
+.column-right { right: -50px; transform: scaleX(-1); }

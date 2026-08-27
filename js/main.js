@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => {
                 // Quitar estado activo de todos
                 eventButtons.forEach(b => {
-                    b.classList.remove('bg-tertiary', 'text-on-primary', 'border-tertiary');
-                    b.classList.add('text-on-surface-variant', 'border-outline', 'hover:text-tertiary');
+                    b.classList.remove('bg-primary/10', 'text-primary', 'border-primary');
+                    b.classList.add('border-outline-variant/50', 'text-on-surface-variant');
                 });
                 // Añadir estado activo al botón clickeado
-                btn.classList.add('bg-tertiary', 'text-on-primary', 'border-tertiary');
-                btn.classList.remove('text-on-surface-variant', 'border-outline', 'hover:text-tertiary');
+                btn.classList.add('bg-primary/10', 'text-primary', 'border-primary');
+                btn.classList.remove('border-outline-variant/50', 'text-on-surface-variant');
 
                 // Actualizar valor oculto para envío del form
                 eventTypeInput.value = btn.getAttribute('data-value');
@@ -99,11 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Update tabs (pill style)
                 spaceTabs.forEach(t => {
-                    t.classList.remove('active', 'bg-primary', 'text-on-primary');
-                    t.classList.add('bg-transparent', 'text-on-surface-variant', 'hover:bg-surface-variant', 'hover:text-on-background');
+                    t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md');
+                    t.classList.add('bg-transparent', 'text-on-surface-variant', 'hover:text-on-background');
                 });
-                tab.classList.add('active', 'bg-primary', 'text-on-primary');
-                tab.classList.remove('bg-transparent', 'text-on-surface-variant', 'hover:bg-surface-variant', 'hover:text-on-background');
+                tab.classList.add('active', 'bg-primary', 'text-white', 'shadow-md');
+                tab.classList.remove('bg-transparent', 'text-on-surface-variant', 'hover:text-on-background');
                 
                 // Update contents (fluid transition)
                 spaceContents.forEach(c => {
@@ -248,4 +248,39 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappUrl, '_blank');
         });
     }
+
+    // ==========================================
+    // PARALLAX EFFECT FOR BACKGROUND COLUMNS
+    // ==========================================
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const columns = document.querySelectorAll('.olympus-column');
+        columns.forEach(col => {
+            const speed = 0.05;
+            col.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // ==========================================
+    // ANIMATE ON SCROLL (INTERSECTION OBSERVER)
+    // ==========================================
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // 15% del elemento debe ser visible
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Dejar de observar una vez que se hizo visible (opcional)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => scrollObserver.observe(el));
+
 });

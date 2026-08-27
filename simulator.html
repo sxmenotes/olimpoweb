@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador Móvil - Olimpo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #f1f5f9; }
+    .device-frame { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    /* Scrollbar minimalista para el frame interior si es necesario */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+  </style>
+</head>
+<body class="h-screen flex flex-col md:flex-row overflow-hidden font-sans text-slate-800">
+  
+  <!-- Controles Laterales -->
+  <aside class="w-full md:w-80 bg-white border-b md:border-r border-slate-200 p-6 flex flex-col gap-6 z-10 shrink-0 shadow-lg">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        Simulador
+      </h1>
+      <p class="text-sm text-slate-500 mt-1">Previsualizador de Responsividad</p>
+    </div>
+    
+    <div class="flex flex-col gap-2 mt-4">
+      <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Dispositivo Móvil</label>
+      <div class="relative">
+        <select id="deviceSelect" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer font-medium">
+          <optgroup label="Apple iOS">
+            <option value="393x852">iPhone 14 / 15 Pro (393x852)</option>
+            <option value="430x932">iPhone 14 / 15 Pro Max (430x932)</option>
+            <option value="375x667">iPhone SE (375x667)</option>
+          </optgroup>
+          <optgroup label="Android">
+            <option value="412x915">Google Pixel 7 (412x915)</option>
+            <option value="360x800">Samsung Galaxy S22 (360x800)</option>
+            <option value="384x854">Motorola Moto G (384x854)</option>
+          </optgroup>
+          <optgroup label="Tablets">
+            <option value="768x1024">iPad Mini (768x1024)</option>
+            <option value="820x1180">iPad Air (820x1180)</option>
+          </optgroup>
+        </select>
+        <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-slate-400">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Orientación</label>
+      <div class="flex gap-2 p-1 bg-slate-100 rounded-lg border border-slate-200">
+        <button id="btn-portrait" class="flex-1 py-2 bg-white text-slate-800 shadow-sm rounded-md font-medium text-sm transition flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          Vertical
+        </button>
+        <button id="btn-landscape" class="flex-1 py-2 bg-transparent text-slate-500 rounded-md font-medium text-sm hover:text-slate-700 transition flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90)"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          Horizontal
+        </button>
+      </div>
+    </div>
+    
+    <div class="mt-auto flex flex-col gap-3">
+        <a href="index.html" target="_blank" class="w-full py-3 bg-slate-100 text-slate-700 rounded-lg font-medium text-sm hover:bg-slate-200 border border-slate-200 transition flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          Abrir en pestaña completa
+        </a>
+        <button onclick="document.getElementById('preview-frame').contentWindow.location.reload();" class="w-full py-3 bg-blue-600 text-white rounded-lg font-medium text-sm hover:bg-blue-700 shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+          Recargar Frame
+        </button>
+    </div>
+  </aside>
+
+  <!-- Canvas Principal -->
+  <main class="flex-1 bg-slate-200/50 flex items-center justify-center p-4 md:p-8 overflow-auto relative bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px]">
+    
+    <!-- Contenedor del Dispositivo -->
+    <div class="device-frame bg-white rounded-[2.5rem] border-[10px] border-slate-900 overflow-hidden relative flex flex-col ring-4 ring-slate-900/10" id="deviceContainer" style="width: 393px; height: 852px;">
+      
+      <!-- Notch / Isla dinámica decorativa -->
+      <div id="notch" class="absolute top-2 inset-x-0 h-7 flex justify-center z-50 pointer-events-none transition-all duration-300">
+        <div class="w-32 h-7 bg-slate-900 rounded-full"></div>
+      </div>
+
+      <!-- Frame embebido -->
+      <iframe id="preview-frame" src="index.html" class="w-full h-full border-0 bg-white" title="Vista previa móvil"></iframe>
+      
+      <!-- Indicador de barra de inicio (Home indicator) -->
+      <div id="home-indicator" class="absolute bottom-1 inset-x-0 h-1.5 flex justify-center z-50 pointer-events-none transition-all duration-300">
+        <div class="w-32 h-1.5 bg-slate-900/40 rounded-full"></div>
+      </div>
+    </div>
+    
+  </main>
+
+  <script>
+    const select = document.getElementById('deviceSelect');
+    const container = document.getElementById('deviceContainer');
+    const btnPortrait = document.getElementById('btn-portrait');
+    const btnLandscape = document.getElementById('btn-landscape');
+    const notch = document.getElementById('notch');
+    const homeIndicator = document.getElementById('home-indicator');
+    
+    let isLandscape = false;
+
+    function updateSize() {
+      const [w, h] = select.value.split('x').map(Number);
+      
+      // Animar transición
+      if (isLandscape) {
+        container.style.width = `${h}px`;
+        container.style.height = `${w}px`;
+        // Ajustar estéticos en landscape
+        notch.style.transform = 'translateY(-100%)'; 
+        homeIndicator.style.transform = 'translateY(100%)';
+      } else {
+        container.style.width = `${w}px`;
+        container.style.height = `${h}px`;
+        // Volver estéticos en portrait
+        notch.style.transform = 'translateY(0)';
+        homeIndicator.style.transform = 'translateY(0)';
+      }
+    }
+
+    select.addEventListener('change', updateSize);
+
+    btnPortrait.addEventListener('click', () => {
+      if(!isLandscape) return;
+      isLandscape = false;
+      
+      btnPortrait.classList.remove('bg-transparent', 'text-slate-500');
+      btnPortrait.classList.add('bg-white', 'text-slate-800', 'shadow-sm');
+      
+      btnLandscape.classList.remove('bg-white', 'text-slate-800', 'shadow-sm');
+      btnLandscape.classList.add('bg-transparent', 'text-slate-500');
+      
+      updateSize();
+    });
+
+    btnLandscape.addEventListener('click', () => {
+      if(isLandscape) return;
+      isLandscape = true;
+      
+      btnLandscape.classList.remove('bg-transparent', 'text-slate-500');
+      btnLandscape.classList.add('bg-white', 'text-slate-800', 'shadow-sm');
+      
+      btnPortrait.classList.remove('bg-white', 'text-slate-800', 'shadow-sm');
+      btnPortrait.classList.add('bg-transparent', 'text-slate-500');
+      
+      updateSize();
+    });
+  </script>
+</body>
+</html>
