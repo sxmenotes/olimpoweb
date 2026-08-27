@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: sxmenotes/olimpoweb
   branch: main
-
+  auth_endpoint: api/auth
 media_folder: "img"
 public_folder: "/img"
 
