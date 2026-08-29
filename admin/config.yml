@@ -2,6 +2,7 @@ backend:
   name: github
   repo: sxmenotes/olimpoweb
   branch: main
+  base_url: https://olimpoweb.vercel.app
   auth_endpoint: api/auth
 media_folder: "img"
 public_folder: "/img"
