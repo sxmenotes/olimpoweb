@@ -39,10 +39,18 @@ export default async function handler(req, res) {
               message.origin
             );
             window.removeEventListener("message", receiveMessage, false);
+            setTimeout(() => window.close(), 400);
           }
         }
         window.addEventListener("message", receiveMessage, false);
         window.opener.postMessage("authorizing:github", "*");
+        try {
+          window.opener.postMessage(
+            'authorization:github:success:{"token":"${token}","provider":"github"}',
+            "*"
+          );
+          setTimeout(() => window.close(), 600);
+        } catch (e) {}
       </script>
     `;
 
