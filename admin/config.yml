@@ -12,52 +12,54 @@ collections:
     label: "Páginas"
     files:
       - file: "data/content.json"
-        label: "Inicio"
+        label: "Inicio (Home)"
         name: "home"
         fields:
-          - label: "Sección Inicio (Hero)"
+          - label: "1. Sección Portada (Hero)"
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Título Principal", name: "title", widget: "string", default: "Donde cada celebración cobra vida"}
-              - {label: "Subtítulo", name: "subtitle", widget: "text", default: "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó."}
-              - {label: "Imagen de Fondo", name: "image", widget: "image", required: false}
+              - {label: "Título Principal", name: "title", widget: "string", default: "¡Donde cada celebración cobra vida!", hint: "Título de bienvenida en el encabezado principal"}
+              - {label: "Subtítulo Descriptivo", name: "subtitle", widget: "text", default: "Experimente la fusión de la elegancia clásica y la energía contemporánea en el centro de eventos más exclusivo de Curicó."}
+              - {label: "Fotografía de Fondo (Hero)", name: "image", widget: "image", required: false, hint: "Recomendado: Imagen horizontal panorámica (1920x1080px)"}
 
-          - label: "Sección El Espacio"
+          - label: "2. Sección El Espacio y Salones"
             name: "space"
             widget: "object"
             fields:
-              - {label: "Título Principal", name: "title", widget: "string", default: "El Espacio"}
-              - {label: "Texto Principal", name: "text", widget: "text", default: "Sumérjase en nuestra inconfundible arquitectura de estilo griego, diseñada para crear un ambiente elegante, diferente y de altísimo nivel. Nuestro complejo cuenta con hermosas y amplias áreas verdes, piscina y un exclusivo Apart Hotel pensado para el descanso y la máxima comodidad de sus invitados."}
-              - {label: "Imagen Salón Olimpo", name: "image_olimpo", widget: "image", required: false}
-              - {label: "Imagen Salón Apolo", name: "image_apolo", widget: "image", required: false}
-              - {label: "Imagen Salón Dionisio", name: "image_dionisio", widget: "image", required: false}
+              - {label: "Título de la Sección", name: "title", widget: "string", default: "El Espacio"}
+              - {label: "Descripción del Complejo", name: "text", widget: "text", hint: "Párrafo introductorio sobre las instalaciones y salones de Olimpo"}
+              - {label: "Foto Salón Olimpo", name: "image_olimpo", widget: "image", required: false, hint: "Fotografía principal del Salón Olimpo"}
+              - {label: "Foto Salón Apolo", name: "image_apolo", widget: "image", required: false, hint: "Fotografía principal del Salón Apolo"}
+              - {label: "Foto Salón Dionisio", name: "image_dionisio", widget: "image", required: false, hint: "Fotografía principal del Salón Dionisio"}
 
-          - label: "Sección Servicios"
+          - label: "3. Sección Servicios Exclusivos"
             name: "services"
             widget: "object"
             fields:
-              - {label: "Foto Gastronomía", name: "image_gastronomia", widget: "image", required: false}
-              - {label: "Foto Ambientación", name: "image_ambientacion", widget: "image", required: false}
-              - {label: "Foto Wedding Planner", name: "image_wedding", widget: "image", required: false}
+              - {label: "Foto Alta Gastronomía", name: "image_gastronomia", widget: "image", required: false, hint: "Tarjeta de servicio gastronómico"}
+              - {label: "Foto Ambientación y Decoración", name: "image_ambientacion", widget: "image", required: false, hint: "Tarjeta de servicio de diseño y ambientación"}
+              - {label: "Foto Wedding Planner", name: "image_wedding", widget: "image", required: false, hint: "Tarjeta de servicio de planificación de bodas"}
 
-          - label: "Sección Galería"
+          - label: "4. Galería Fotográfica"
             name: "gallery"
             widget: "list"
+            summary: "{{fields.image}}"
+            hint: "Puedes agregar, eliminar o arrastrar fotos para reordenar la galería en la web"
             fields:
-              - {label: "Foto", name: "image", widget: "image"}
+              - {label: "Fotografía", name: "image", widget: "image"}
               
-          - label: "Sección Nuestro Sello"
+          - label: "5. Sección Nuestro Sello"
             name: "sello"
             widget: "object"
             fields:
-              - {label: "Título Principal", name: "title", widget: "string", default: "Nuestro Sello"}
+              - {label: "Título", name: "title", widget: "string", default: "Nuestro Sello"}
               - {label: "Subtítulo", name: "subtitle", widget: "string", default: "Una experiencia diferente"}
-              - {label: "Párrafo 1", name: "paragraph1", widget: "text"}
-              - {label: "Párrafo 2", name: "paragraph2", widget: "text"}
-              - {label: "Párrafo 3", name: "paragraph3", widget: "text"}
-              - {label: "Párrafo 4", name: "paragraph4", widget: "text"}
-              - {label: "Título de Firma", name: "founder_title", widget: "string", default: "Olimpo Centro de Eventos"}
-              - {label: "Slogan", name: "slogan", widget: "string", default: "Tu celebración. Nuestro compromiso. Una experiencia inolvidable."}
-              - {label: "Foto Fundadora", name: "image", widget: "image"}
-              - {label: "Leyenda Foto", name: "image_caption", widget: "string", default: "Patricia Castillo, Fundadora de Centro de Eventos Olimpo"}
+              - {label: "Párrafo 1 (Estilo y Atmósfera)", name: "paragraph1", widget: "text"}
+              - {label: "Párrafo 2 (El Valor del Evento)", name: "paragraph2", widget: "text"}
+              - {label: "Párrafo 3 (Trayectoria y Años)", name: "paragraph3", widget: "text"}
+              - {label: "Párrafo 4 (Tranquilidad y Respaldo)", name: "paragraph4", widget: "text"}
+              - {label: "Firma / Título de Marca", name: "founder_title", widget: "string", default: "Olimpo Centro de Eventos"}
+              - {label: "Slogan Oficial", name: "slogan", widget: "string", default: "Tu celebración. Nuestro compromiso. Una experiencia inolvidable."}
+              - {label: "Foto de la Fundadora", name: "image", widget: "image", hint: "Foto vertical de Patricia Castillo"}
+              - {label: "Leyenda o Pie de Foto", name: "image_caption", widget: "string", default: "Patricia Castillo, Fundadora de Centro de Eventos Olimpo"}

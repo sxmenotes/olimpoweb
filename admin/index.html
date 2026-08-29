@@ -4,47 +4,191 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administrador de Contenido | Olimpo</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo-black.png">
+    
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+    
     <style>
-      /* Estilos personalizados para el panel de login de Decap CMS */
+      /* ==========================================================================
+         TEMA PERSONALIZADO OLIMPO PARA DECAP CMS
+         ========================================================================== */
+      :root {
+        --color-primary: #4a5022;
+        --color-primary-dark: #2d3215;
+        --color-primary-light: #60682c;
+        --color-gold: #b59b58;
+        --color-gold-light: #ded7c2;
+        --color-bg: #f8f7f2;
+        --color-surface: #ffffff;
+        --color-border: #e2ded0;
+        --color-text: #1c1d1a;
+        --color-text-muted: #6d7256;
+      }
+
+      * {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      }
+
       body {
-        background-color: #f8f7f2 !important;
+        background-color: var(--color-bg) !important;
         background-image: radial-gradient(#e4e1d3 1px, transparent 1px) !important;
         background-size: 24px 24px !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        color: var(--color-text) !important;
       }
-      /* Estilizar botón de login */
-      button[class*="AuthenticationPage-button"], 
-      button[class*="Button-button"] {
-        background-color: #4a5022 !important;
+
+      /* 1. Header / Barra de Navegación Superior */
+      header[class*="AppHeader"],
+      header[class*="Header"] {
+        background-color: var(--color-primary-dark) !important;
+        border-bottom: 2px solid var(--color-gold) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      /* Estilo del logo en el navbar */
+      .olimpo-nav-logo {
+        height: 36px;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      }
+
+      /* 2. Botones de Acción (Guardar / Publicar) */
+      button[class*="Button-button-default-primary"],
+      button[class*="WorkflowButton"],
+      button[class*="SaveButton"] {
+        background-color: var(--color-primary) !important;
         color: #ffffff !important;
-        border: none !important;
+        border: 1px solid var(--color-primary-light) !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(74, 80, 34, 0.3) !important;
+      }
+
+      button[class*="Button-button-default-primary"]:hover,
+      button[class*="WorkflowButton"]:hover,
+      button[class*="SaveButton"]:hover {
+        background-color: var(--color-primary-light) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(74, 80, 34, 0.4) !important;
+      }
+
+      /* 3. Tarjetas, Formularios y Campos */
+      div[class*="ControlPaneContainer"],
+      div[class*="EditorContainer"],
+      div[class*="CollectionCard"] {
+        background: var(--color-surface) !important;
+        border-radius: 12px !important;
+        border: 1px solid var(--color-border) !important;
+        box-shadow: 0 4px 16px rgba(44, 49, 21, 0.04) !important;
+      }
+
+      input[class*="Field-input"],
+      textarea[class*="Field-textarea"],
+      select[class*="Field-select"] {
+        border-radius: 8px !important;
+        border: 1px solid var(--color-border) !important;
+        background-color: #faf9f6 !important;
+        color: var(--color-text) !important;
+        transition: all 0.2s ease !important;
+      }
+
+      input[class*="Field-input"]:focus,
+      textarea[class*="Field-textarea"]:focus,
+      select[class*="Field-select"]:focus {
+        background-color: #ffffff !important;
+        border-color: var(--color-primary) !important;
+        box-shadow: 0 0 0 3px rgba(74, 80, 34, 0.12) !important;
+        outline: none !important;
+      }
+
+      /* 4. Pantalla de Bienvenida / Login Inicial */
+      button[class*="AuthenticationPage-button"] {
+        background-color: var(--color-primary) !important;
+        color: #ffffff !important;
+        border: 1px solid var(--color-primary-light) !important;
         border-radius: 10px !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        font-size: 14px !important;
+        font-size: 15px !important;
         font-weight: 600 !important;
         padding: 14px 28px !important;
         transition: all 0.2s ease !important;
-        box-shadow: 0 4px 14px rgba(74, 80, 34, 0.25) !important;
+        box-shadow: 0 4px 16px rgba(74, 80, 34, 0.3) !important;
         cursor: pointer !important;
       }
-      button[class*="AuthenticationPage-button"]:hover, 
-      button[class*="Button-button"]:hover {
-        background-color: #3b4019 !important;
+
+      button[class*="AuthenticationPage-button"]:hover {
+        background-color: var(--color-primary-dark) !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 6px 18px rgba(74, 80, 34, 0.35) !important;
+        box-shadow: 0 6px 20px rgba(74, 80, 34, 0.4) !important;
+      }
+
+      /* 5. Títulos con tipografía Playfair */
+      h1, h2, h3, [class*="CollectionHeader-title"] {
+        font-family: 'Playfair Display', Georgia, serif !important;
+        color: var(--color-primary-dark) !important;
+        letter-spacing: -0.01em !important;
+      }
+
+      /* 6. Barra lateral de Colecciones */
+      div[class*="SidebarContainer"] a[class*="SidebarLink-active"] {
+        background-color: #ede9dc !important;
+        color: var(--color-primary) !important;
+        font-weight: 700 !important;
+        border-left: 4px solid var(--color-primary) !important;
+      }
+
+      /* Estilo de la vista previa en vivo */
+      .preview-body {
+        padding: 24px;
+        background-color: #f8f7f2;
+        min-height: 100vh;
+      }
+      .preview-card {
+        background: #ffffff;
+        border: 1px solid #e2ded0;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      }
+      .preview-hero {
+        background: linear-gradient(rgba(45, 50, 21, 0.8), rgba(45, 50, 21, 0.9)), center/cover no-repeat;
+        color: #ffffff;
+        padding: 48px 24px;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .preview-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #4a5022;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 12px;
       }
     </style>
   </head>
   <body>
-    <!-- Script de Decap CMS -->
+    <!-- Decap CMS Core -->
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+
     <script>
-      // Personalizar los textos del botón de login para ocultar mención a GitHub
+      // 1. Script para inyectar el Logo y personalizar textos dinámicamente
       const observer = new MutationObserver(() => {
+        // Personalizar botón de login
         const buttons = document.querySelectorAll('button');
         buttons.forEach(btn => {
           if (btn.textContent && (btn.textContent.includes('GitHub') || btn.textContent.includes('github') || btn.textContent.includes('Login'))) {
@@ -57,8 +201,81 @@
             `;
           }
         });
+
+        // Insertar Logo en el Header del panel
+        const headerLogoArea = document.querySelector('a[class*="AppHeader-link"]');
+        if (headerLogoArea && !headerLogoArea.querySelector('.olimpo-nav-logo')) {
+          const logoImg = document.createElement('img');
+          logoImg.src = '/img/logo-white.png';
+          logoImg.alt = 'Olimpo';
+          logoImg.className = 'olimpo-nav-logo';
+          headerLogoArea.prepend(logoImg);
+        }
       });
       observer.observe(document.body, { childList: true, subtree: true });
+
+      // 2. Registro de Plantilla de Vista Previa en Vivo (Live Preview con React)
+      if (window.CMS) {
+        CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+        
+        const HomePreview = createClass({
+          render: function() {
+            const entry = this.props.entry;
+            const hero = entry.getIn(['data', 'hero']);
+            const space = entry.getIn(['data', 'space']);
+            const sello = entry.getIn(['data', 'sello']);
+            const gallery = entry.getIn(['data', 'gallery']);
+
+            const heroTitle = hero ? hero.get('title') : '¡Donde cada celebración cobra vida!';
+            const heroSubtitle = hero ? hero.get('subtitle') : '';
+            const heroImg = hero ? this.props.getAsset(hero.get('image')) : '';
+
+            const spaceTitle = space ? space.get('title') : 'El Espacio';
+            const spaceText = space ? space.get('text') : '';
+
+            const selloTitle = sello ? sello.get('title') : 'Nuestro Sello';
+            const selloSubtitle = sello ? sello.get('subtitle') : '';
+            const selloP1 = sello ? sello.get('paragraph1') : '';
+            const selloSlogan = sello ? sello.get('slogan') : '';
+
+            return h('div', { className: 'preview-body' },
+              // Banner Hero
+              h('div', { 
+                className: 'preview-hero',
+                style: heroImg ? { backgroundImage: 'linear-gradient(rgba(45, 50, 21, 0.75), rgba(45, 50, 21, 0.85)), url(' + heroImg.toString() + ')' } : {}
+              },
+                h('span', { className: 'preview-badge' }, 'Vista Previa • Portada'),
+                h('h1', { style: { fontFamily: 'Playfair Display, serif', fontSize: '28px', marginBottom: '12px', color: '#fff' } }, heroTitle),
+                h('p', { style: { fontSize: '14px', maxWidth: '650px', margin: '0 auto', opacity: 0.95 } }, heroSubtitle)
+              ),
+
+              // Sección El Espacio
+              h('div', { className: 'preview-card' },
+                h('span', { className: 'preview-badge' }, 'Instalaciones'),
+                h('h2', { style: { fontFamily: 'Playfair Display, serif', color: '#4a5022', fontSize: '22px', marginBottom: '10px' } }, spaceTitle),
+                h('p', { style: { fontSize: '14px', lineHeight: '1.7', color: '#4d5236' } }, spaceText)
+              ),
+
+              // Sección Nuestro Sello
+              h('div', { className: 'preview-card', style: { background: '#f5f3ec', borderColor: '#ded7c2' } },
+                h('span', { className: 'preview-badge' }, 'Identidad de Marca'),
+                h('h2', { style: { fontFamily: 'Playfair Display, serif', color: '#4a5022', fontSize: '22px', marginBottom: '6px' } }, selloTitle),
+                h('h4', { style: { fontStyle: 'italic', color: '#6d7256', marginBottom: '12px', fontSize: '14px' } }, selloSubtitle),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.6', color: '#333', marginBottom: '16px' } }, selloP1),
+                selloSlogan ? h('blockquote', { style: { fontStyle: 'italic', fontWeight: '600', color: '#4a5022', borderLeft: '3px solid #b59b58', paddingLeft: '12px' } }, '“' + selloSlogan + '”') : null
+              ),
+
+              // Galería Preview
+              gallery && gallery.size ? h('div', { className: 'preview-card' },
+                h('span', { className: 'preview-badge' }, 'Galería (' + gallery.size + ' fotos)'),
+                h('p', { style: { fontSize: '13px', color: '#666' } }, 'Todas las fotos añadidas se sincronizarán dinámicamente con el carrusel de la página web.')
+              ) : null
+            );
+          }
+        });
+
+        CMS.registerPreviewTemplate('pages', HomePreview);
+      }
     </script>
   </body>
 </html>
