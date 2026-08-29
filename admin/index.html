@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administrador de Contenido</title>
+    <title>Administrador de Contenido | Olimpo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+    <style>
+      /* Estilos personalizados para el panel de login de Decap CMS */
+      body {
+        background-color: #f8f7f2 !important;
+        background-image: radial-gradient(#e4e1d3 1px, transparent 1px) !important;
+        background-size: 24px 24px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+      }
+      /* Estilizar botón de login */
+      button[class*="AuthenticationPage-button"], 
+      button[class*="Button-button"] {
+        background-color: #4a5022 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 10px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        padding: 14px 28px !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 4px 14px rgba(74, 80, 34, 0.25) !important;
+        cursor: pointer !important;
+      }
+      button[class*="AuthenticationPage-button"]:hover, 
+      button[class*="Button-button"]:hover {
+        background-color: #3b4019 !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 6px 18px rgba(74, 80, 34, 0.35) !important;
+      }
+    </style>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Decap CMS -->
+    <!-- Script de Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+    <script>
+      // Personalizar los textos del botón de login para ocultar mención a GitHub
+      const observer = new MutationObserver(() => {
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+          if (btn.textContent && (btn.textContent.includes('GitHub') || btn.textContent.includes('github') || btn.textContent.includes('Login'))) {
+            btn.innerHTML = `
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Ingresar al Administrador</span>
+            `;
+          }
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    </script>
   </body>
 </html>
