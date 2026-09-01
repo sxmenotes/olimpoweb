@@ -1,0 +1,16 @@
+{
+  "name": "Olimpo Centro de Eventos",
+  "short_name": "Olimpo",
+  "description": "Centro de eventos especializado en bodas, celebraciones y eventos corporativos en Curicó, Maule.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f7f2",
+  "theme_color": "#4a5022",
+  "icons": [
+    {
+      "src": "img/panteon-black.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

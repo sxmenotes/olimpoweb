@@ -21,6 +21,15 @@ Olimpo es una aplicación web estática construida para presentar de forma elega
 - **Galería Dinámica**: Se eliminó la limitación de 22 imágenes, pasando a utilizar un widget de lista dinámica que permite subir, ordenar y eliminar fotografías libremente desde el panel `/admin/`.
 - **Sincronización Total**: Todos los textos e imágenes (incluyendo fotos de la fundadora y servicios) ahora son completamente editables por el usuario final a través del CMS, sin necesidad de tocar el código fuente.
 
+## 🚀 Notas de la Versión 1.2.1 (Optimización SEO y Motores de IA)
+
+Esta actualización se centra en mejorar la visibilidad del sitio en motores de búsqueda tradicionales y asistentes de inteligencia artificial:
+
+- **Archivos Raíz para Indexación**: Integración de `robots.txt`, `sitemap.xml` dinámico y `site.webmanifest`. Incorporación del estándar `llms.txt` para optimizar la lectura por parte de ChatGPT, Claude, Perplexity y otros modelos de lenguaje.
+- **Metadatos Avanzados**: Implementación completa de etiquetas Open Graph (para redes sociales) y Twitter Cards en el `<head>`.
+- **Datos Estructurados (JSON-LD)**: Configuración de esquemas `EventVenue`, `Organization`, `WebSite` y `FAQPage` para enriquecer los resultados de búsqueda con información precisa sobre el negocio, ubicación, contacto y preguntas frecuentes.
+- **Favicon y Accesibilidad**: Extracción y optimización del ícono del panteón para uso como favicon en alta resolución, y mejora de los atributos `alt` en imágenes clave para accesibilidad y SEO.
+
 ## Estructura de Archivos
 
 La estructura principal del proyecto está organizada de la siguiente manera:

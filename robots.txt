@@ -1,0 +1,53 @@
+# robots.txt — Olimpo Centro de Eventos
+# https://olimpocentrodeeventoscurico.cl
+
+# Buscadores principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Bots de IA — permitidos explícitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Regla global para cualquier otro rastreador
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://olimpocentrodeeventoscurico.cl/sitemap.xml
