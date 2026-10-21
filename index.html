@@ -189,6 +189,23 @@
 
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
 
+  <!-- Promoción de bienvenida -->
+  <dialog id="welcome-popup" class="welcome-popup" aria-label="Gala de Graduación 2027–2028">
+    <div class="welcome-popup-header">
+      <span class="welcome-popup-label">Olimpo <span>Centro de eventos</span></span>
+      <button id="welcome-popup-close" class="welcome-popup-close" type="button" aria-label="Cerrar promoción" autofocus>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+      </button>
+    </div>
+    <img class="welcome-popup-image" src="img/gala-graduacion-2027-2028.jpeg" width="899" height="1599"
+      alt="Vive junto a nosotros tu Gala de Graduación. Full producción, gastronomía y decoración. Últimas fechas 2027–2028. Agenda tu fecha en Olimpo Centro de Eventos: +56 9 7860 0627."
+      fetchpriority="high" />
+    <div class="welcome-popup-footer">
+      <p>Tu próxima celebración empieza aquí.</p>
+      <a id="welcome-popup-cta" class="welcome-popup-cta" href="#contacto">Agenda tu fecha <span aria-hidden="true">↗</span></a>
+    </div>
+  </dialog>
+
   <!-- TopNavBar -->
   <nav
     class="docked full-width top-0 sticky z-50 border-b border-outline-variant/30 bg-background/90 backdrop-blur-md dark:bg-inverse-surface dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-full transition-all duration-300">
@@ -847,6 +864,7 @@
       </button>
     </div>
   </footer>
+  <script src="js/vendor/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

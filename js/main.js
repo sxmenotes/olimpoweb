@@ -1,4 +1,81 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Native dialog keeps keyboard focus inside the promotion and supports Escape.
+    const welcomePopup = document.getElementById('welcome-popup');
+    const welcomePopupClose = document.getElementById('welcome-popup-close');
+    const welcomePopupCta = document.getElementById('welcome-popup-cta');
+
+    if (welcomePopup && welcomePopupClose && welcomePopupCta && typeof welcomePopup.showModal === 'function') {
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const gsap = window.gsap;
+        let entrance;
+        let closing = false;
+
+        const closeWelcomePopup = (afterClose) => {
+            if (closing || !welcomePopup.open) return;
+            closing = true;
+            entrance?.kill();
+            const finish = () => {
+                welcomePopup.close();
+                document.documentElement.classList.remove('welcome-popup-open');
+                if (typeof afterClose === 'function') afterClose();
+            };
+            if (gsap && !motionPreference.matches) {
+                gsap.to(welcomePopup, {
+                    opacity: 0, y: 12, scale: 0.985,
+                    '--backdrop-opacity': 0,
+                    duration: 0.24, ease: 'power2.in', onComplete: finish
+                });
+            } else {
+                finish();
+            }
+        };
+
+        welcomePopupClose.addEventListener('click', () => closeWelcomePopup());
+        welcomePopup.addEventListener('cancel', (event) => {
+            event.preventDefault();
+            closeWelcomePopup();
+        });
+        welcomePopup.addEventListener('close', () => {
+            document.documentElement.classList.remove('welcome-popup-open');
+        });
+        welcomePopup.addEventListener('click', (event) => {
+            const bounds = welcomePopup.getBoundingClientRect();
+            if (event.target === welcomePopup && (
+                event.clientX < bounds.left || event.clientX > bounds.right ||
+                event.clientY < bounds.top || event.clientY > bounds.bottom
+            )) {
+                closeWelcomePopup();
+            }
+        });
+        welcomePopupCta.addEventListener('click', (event) => {
+            event.preventDefault();
+            closeWelcomePopup(() => {
+                const graduationButton = document.querySelector('.event-btn[data-value="graduacion"]');
+                graduationButton?.click();
+                graduationButton?.focus({ preventScroll: true });
+                window.location.hash = 'contacto';
+                document.getElementById('contacto')?.scrollIntoView({
+                    behavior: motionPreference.matches ? 'instant' : 'smooth', block: 'start'
+                });
+            });
+        });
+
+        welcomePopup.showModal();
+        document.documentElement.classList.add('welcome-popup-open');
+        if (gsap && !motionPreference.matches) {
+            entrance = gsap.timeline();
+            entrance.fromTo(welcomePopup,
+                { opacity: 0, y: 28, scale: 0.975, '--backdrop-opacity': 0 },
+                { opacity: 1, y: 0, scale: 1, '--backdrop-opacity': 1,
+                    duration: 0.65, ease: 'power3.out' }
+            ).fromTo(welcomePopup.querySelectorAll('.welcome-popup-label, .welcome-popup-image, .welcome-popup-footer'),
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 0.45, stagger: 0.09, ease: 'power2.out' },
+                0.12
+            );
+        }
+    }
+
     // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
