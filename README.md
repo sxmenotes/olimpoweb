@@ -48,6 +48,14 @@ OLIMPO PROP/
 └── README.md        # Documentación de la versión actual
 ```
 
+## Popup de bienvenida
+
+Al ingresar o recargar la página se muestra la promoción de Gala de Graduación 2027–2028, con la imagen original en `img/gala-graduacion-2027-2028.jpeg`. Se puede cerrar con la X, la tecla Escape o al hacer clic fuera del popup. El botón **Agenda tu fecha** cierra la promoción y lleva al formulario `#contacto` con **Graduación** seleccionado.
+
+**Rediseño (2026-10-20):** en escritorio el popup usa dos columnas: la imagen de la gala a la izquierda y, a la derecha, un panel verde oliva oscuro con cuadrícula sutil, etiqueta "Últimas fechas 2027–2028", título en Playfair Display, descripción y botón verde claro. En móvil (menos de 680px) se apila: imagen arriba y contenido abajo. El botón de cierre es circular y flota sobre la esquina, el fondo se difumina y la entrada se anima con CSS y GSAP, respetando la preferencia de movimiento reducido y manteniendo el popup funcional si la librería no carga. Se sirve una copia de GSAP en `js/vendor/gsap.min.js` para que el sitio estático no dependa de `node_modules` al publicarse.
+
+Los textos del panel derecho (etiqueta y descripción) se definen con `::before`/`::after` en `css/style.css`. Para cambiar la promoción, reemplaza la imagen y actualiza su texto alternativo en `index.html`. El popup está definido en `index.html`, sus estilos en `css/style.css` y su comportamiento en `js/main.js`.
+
 ## Despliegue
 
 Este repositorio está conectado a Vercel para despliegues automáticos (CI/CD). Cualquier cambio empujado a la rama `main` (incluyendo aquellos hechos por los administradores a través de Decap CMS) iniciará automáticamente un nuevo despliegue del sitio en su versión más reciente.
