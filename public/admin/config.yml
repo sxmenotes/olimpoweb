@@ -4,14 +4,14 @@ backend:
   branch: main
   base_url: https://olimpoweb.vercel.app
   auth_endpoint: api/auth
-media_folder: "img"
+media_folder: "public/img"
 public_folder: "/img"
 
 collections:
   - name: "pages"
     label: "Páginas"
     files:
-      - file: "data/content.json"
+      - file: "public/data/content.json"
         label: "Inicio (Home)"
         name: "home"
         fields:

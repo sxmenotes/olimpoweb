@@ -1,4 +1,10 @@
-tailwind.config = {
+import forms from '@tailwindcss/forms';
+import containerQueries from '@tailwindcss/container-queries';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ['./index.html', './src/**/*.js'],
+    plugins: [forms, containerQueries],
     darkMode: "class",
     theme: {
         extend: {

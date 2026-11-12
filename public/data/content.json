@@ -18,70 +18,70 @@
   },
   "gallery": [
     {
-      "image": "/img/gallery/new_gal_1.jpg"
+      "image": "/img/gallery/nueva_1.jpg"
     },
     {
-      "image": "/img/gallery/new_gal_2.jpg"
+      "image": "/img/gallery/nueva_3.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_2.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_8.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_4.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_7.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_6.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_5.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_11.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_9.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_14.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_15.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_10.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_13.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_12.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_16.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_17.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_18.jpg"
+    },
+    {
+      "image": "/img/gallery/nueva_19.jpg"
     },
     {
       "image": "/img/gallery/new_gal_3.jpg"
     },
     {
-      "image": "/img/gallery/new_gal_4.jpg"
-    },
-    {
       "image": "/img/gallery/new_gal_5.jpg"
     },
     {
-      "image": "/img/gallery/new_gal_6.jpg"
-    },
-    {
       "image": "/img/gallery/new_gal_7.jpg"
-    },
-    {
-      "image": "/img/gallery/new_gal_8.jpg"
-    },
-    {
-      "image": "/img/gallery/new_gal_9.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_10.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_11.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_12.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_13.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_14.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_15.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_16.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_17.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_18.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_19.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_20.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_21.jpg"
-    },
-    {
-      "image": "/img/gallery/gal_22.jpg"
     }
   ],
   "sello": {
